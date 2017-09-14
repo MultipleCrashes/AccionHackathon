@@ -3,8 +3,16 @@ import ReactDOM from 'react-dom';
 
 var WebsiteName = React.createClass({
 	render: function(){
-		return <div> Welcome to Web!! </div>;
+		return <div id="website"> Welcome to Web!! </div>;
 	}
 });
 
-ReactDOM.render(React.createElement(WebsiteName), document.body);
+
+var BgImageClass = React.createClass({
+	render: function(){
+		return <div id="welcome"> Hello World </div>;
+	}
+});
+
+ReactDOM.render(React.createElement(WebsiteName), document.getElementById("website"));
+ReactDOM.render(React.createElement(BgImageClass), document.getElementById("welcome"));
