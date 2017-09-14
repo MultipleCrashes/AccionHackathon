@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 
 var WebsiteName = React.createClass({
 	render: function(){
-		return <div> Welcome to Web!! </div>;
+		return <div> <h3>Enter the email </h3><input type="text" name="email"/>
+			<input type="button" name="submit" value="submit"/></div>;
 	}
 });
 
