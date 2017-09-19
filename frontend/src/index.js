@@ -1,11 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import Request from "superagent";
 
-var WebsiteName = React.createClass({
-	render: function(){
-		return <div> <h3>Enter the email </h3><input type="text" name="email"/>
-			<input type="button" name="submit" value="submit"/></div>;
+
+
+class Layout extends React.Component {
+
+	constructor(){
+		super();
+		this.state = {};
 	}
-});
 
-ReactDOM.render(React.createElement(WebsiteName), document.body);
+	componentWillMount(){
+
+		var url = "https://api.github.com/repos/vmg/redcarpet/issues?state=closed"
+		Request.get(url).then((response) => {
+		console.log(response);	
+		});
+}
+
+
+ render()
+	{
+	return <div id="root">
+			<h1> Hello Bhai </h1>
+			</div>
+	}
+}
+
+
+ReactDOM.render(<Layout/>, document.getElementById('root'))
