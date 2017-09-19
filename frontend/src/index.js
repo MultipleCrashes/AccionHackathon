@@ -12,18 +12,23 @@ class Layout extends React.Component {
 	}
 
 	componentWillMount(){
-
 		var url = "https://api.github.com/repos/vmg/redcarpet/issues?state=closed"
 		Request.get(url).then((response) => {
-		console.log(response);	
+		console.log(response.body);
+			this.setState({
+				res:response.body
+			})
 		});
+		 
+
 }
 
 
  render()
 	{
 	return <div id="root">
-			<h1> Hello Bhai </h1>
+			<h1> Hello Bhai</h1>
+			<div id="child">  {JSON.stringify(this.state.res)}</div>
 			</div>
 	}
 }
